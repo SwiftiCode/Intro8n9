@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: Properties
+    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        myTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +27,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
 
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        myLabel.text = textField.text
+        
+    }
 }
 

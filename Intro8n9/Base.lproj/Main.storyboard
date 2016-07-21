@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-Kq-ile">
+                                <rect key="frame" x="20" y="120" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbi-TE-YNC">
+                                <rect key="frame" x="20" y="350" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cbi-TE-YNC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1pQ-DJ-Clg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cbi-TE-YNC" secondAttribute="trailing" id="69Q-W1-WzX"/>
+                            <constraint firstItem="SQx-Kq-ile" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Uy-dG-SWd"/>
+                            <constraint firstItem="SQx-Kq-ile" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="EsY-lz-cd6"/>
+                            <constraint firstItem="cbi-TE-YNC" firstAttribute="top" secondItem="SQx-Kq-ile" secondAttribute="bottom" constant="200" id="KrQ-d4-Pf8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SQx-Kq-ile" secondAttribute="trailing" id="mz8-05-dPf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myLabel" destination="cbi-TE-YNC" id="pcm-P0-av0"/>
+                        <outlet property="myTextField" destination="SQx-Kq-ile" id="a9G-OA-UIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
